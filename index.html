@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f4ef" />
+    <title>Добрый сосед — Оставить заявку</title>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Добрый сосед — главная">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M5 15.2 16 6l11 9.2v11.3a1.5 1.5 0 0 1-1.5 1.5h-19A1.5 1.5 0 0 1 5 26.5V15.2Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+              <path d="M12.5 28V18h7v10M3.5 15.5 16 5l12.5 10.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span id="site-name">Добрый сосед</span>
+        </a>
+        <span class="topbar-note"><span class="status-dot"></span> Рады помочь</span>
+      </header>
+
+      <main>
+        <section class="intro" aria-labelledby="page-title">
+          <div class="eyebrow"><span class="eyebrow-line"></span> Вместе справимся</div>
+          <h1 id="page-title">Чем мы<br /><span>поможем?</span></h1>
+          <p class="intro-copy">Расскажите, где вы находитесь, какая помощь нужна и какую сумму вы готовы внести. Мы позаботимся об остальном.</p>
+          <div class="trust-note">
+            <span class="lock-icon" aria-hidden="true">⌑</span>
+            Ваши данные останутся конфиденциальными и нужны только для этой заявки.
+          </div>
+        </section>
+
+        <section class="form-card" aria-labelledby="form-heading">
+          <div class="card-heading">
+            <div>
+              <p class="step-label">ВАША ЗАЯВКА <span>·</span> 01 / 01</p>
+              <h2 id="form-heading">Расскажите подробнее</h2>
+            </div>
+            <span class="card-icon" aria-hidden="true">✳</span>
+          </div>
+          <div class="heading-rule"></div>
+
+          <form id="request-form">
+            <div class="field">
+              <label for="address"><span class="field-number">01</span> Домашний адрес</label>
+              <div class="input-wrap">
+                <span class="input-icon pin-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.7"/></svg>
+                </span>
+                <input id="address" name="address" type="text" autocomplete="street-address" placeholder="Улица, дом, город, почтовый индекс" required />
+              </div>
+              <p class="field-hint">Чтобы мы знали, куда направить помощь.</p>
+            </div>
+
+            <div class="field">
+              <label for="request"><span class="field-number">02</span> Какая помощь вам нужна?</label>
+              <div class="input-wrap textarea-wrap">
+                <span class="input-icon note-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8l-5-5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M14 3v5h5M8.5 13h7M8.5 16.5h7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+                </span>
+                <textarea id="request" name="request" rows="4" placeholder="Например, купить продукты, помочь с ремонтом или что-то ещё..." required></textarea>
+              </div>
+              <p class="field-hint">Опишите задачу — так нам будет проще найти помощника.</p>
+            </div>
+
+            <div class="field payment-field">
+              <label for="payment"><span class="field-number">03</span> Ваш вклад <span class="optional">(необязательно)</span></label>
+              <div class="input-wrap payment-wrap">
+                <span class="currency-symbol" id="currency-symbol" aria-hidden="true">₽</span>
+                <input id="payment" name="payment" type="number" min="0" step="1" inputmode="numeric" placeholder="0" />
+                <span class="payment-suffix">RUB</span>
+              </div>
+              <p class="field-hint">Укажите сумму, которую готовы внести. Оплата на сайте не принимается.</p>
+            </div>
+
+            <button class="submit-button" type="submit">
+              <span>Отправить заявку</span>
+              <span class="button-arrow" aria-hidden="true">↗</span>
+            </button>
+            <p class="prototype-note">Демо-версия · Заявка не отправляется, оплата не принимается.</p>
+          </form>
+
+          <div id="confirmation" class="confirmation" role="status" aria-live="polite" hidden>
+            <span class="confirmation-mark" aria-hidden="true">✓</span>
+            <div>
+              <h3>Заявка готова!</h3>
+              <p>Это демо-версия: данные не отправляются и не сохраняются.</p>
+              <button id="new-request" class="text-button" type="button">Оставить ещё одну заявку <span aria-hidden="true">↗</span></button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <span>С заботой о соседях.</span>
+        <span class="footer-mark" aria-hidden="true">✳</span>
+      </footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
